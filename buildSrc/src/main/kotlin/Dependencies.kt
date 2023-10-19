@@ -20,7 +20,14 @@ object Dependencies {
     const val filePicker = "com.darkrockstudios:mpfilepicker:${Versions.filePicker}"
     const val excelKT = "io.github.evanrupert:excelkt:${Versions.excelKt}"
 
+    const val mokoRes = "dev.icerock.moko:resources:${Versions.mokoRes}"
+    const val mokoResCompose = "dev.icerock.moko:resources-compose:${Versions.mokoRes}"
+
+
+
     // Test
+    const val mokoResTest = "dev.icerock.moko:resources-test:${Versions.mokoRes}"
+
     const val junit4 = "junit:junit:${Versions.junit4}"
     const val androidTestRunner = "androidx.test:runner:${Versions.androidTestRunner}"
     const val junit4compose = "androidx.compose.ui:ui-test-junit4:${Versions.compose}"

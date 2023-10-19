@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="field_digit_not_valid">Debe tener exactamente %s dígitos</string>
+    <string name="excluded_events">Eventos Excluidos</string>
+    <string name="added_events">Eventos Agregados</string>
+    <string name="start_export">Iniciar Exportación</string>
+    <string name="save_config">Guardar Configuración</string>
+    <string name="year">Año</string>
+    <string name="month">Mes</string>
+    <string name="table">Tabla (Hoja)</string>
+    <string name="worker_column">Columna de Trabajador</string>
+    <string name="first_row">Primera Fila</string>
+    <string name="first_column">Primera Columna</string>
+    <string name="last_row">Última Fila</string>
+    <string name="last_column">Última Columna</string>
+    <string name="auto_select_last_row">Auto Seleccionar Última Fila</string>
+    <string name="auto_select_last_column">Auto Seleccionar Última Columna</string>
+    <string name="add_event">Agregar Evento</string>
+    <string name="event">Evento</string>
+    <string name="start_four_digits">Inicio (4 Dígitos)</string>
+    <string name="end_four_digits">Fin (4 Dígitos)</string>
+    <string name="overnight">Durante la Noche</string>
+    <string name="only_digits_allowed">Solo se permiten números</string>
+    <string name="load_preview">Cargar Vista Previa</string>
+    <string name="failed_load_file">No se pudo cargar el archivo</string>
+    <string name="found_workers">Trabajadores Encontrados</string>
+    <string name="choose_input_file">Elegir Archivo de Entrada</string>
+    <string name="choose_output_folder">Elegir Carpeta de Salida</string>
+    <string name="event_config">Configurar Eventos</string>
+    <string name="table_config">Configurar Tabla</string>
+    <string name="error_no_folder_file">Archivo/Carpeta no seleccionado</string>
+    <string name="error_invalid_time_for_events">Las horas en los eventos deben tener exactamente 4 dígitos</string>
+    <string name="error_invalid_month_format">El mes debe tener exactamente 2 dígitos</string>
+    <string name="error_invalid_year_format">El año debe tener exactamente 4 dígitos</string>
+</resources>

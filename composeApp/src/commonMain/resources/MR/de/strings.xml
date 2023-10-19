@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="field_digit_not_valid">Muss exakt %s Zahle haben</string>
+    <string name="excluded_events">Ausgeschlossene Einträge</string>
+    <string name="added_events">Hingefügte Einträge</string>
+    <string name="start_export">Export starten</string>
+    <string name="save_config">Konfiguration speichern</string>
+    <string name="year">Jahr</string>
+    <string name="month">Monat</string>
+    <string name="table">Tabelle (Blatt)</string>
+    <string name="worker_column">Arbeiter Spalte</string>
+    <string name="first_row">Erste Zeile</string>
+    <string name="first_column">Erste Spalte</string>
+    <string name="last_row">Letzte Zeile</string>
+    <string name="last_column">Letzte Spalte</string>
+    <string name="auto_select_last_row">Auto letzte Zeile</string>
+    <string name="auto_select_last_column">Auto letzte Spalte</string>
+    <string name="add_event">Termin Hinzufügen</string>
+    <string name="event">Termin</string>
+    <string name="start_four_digits">Start (4-Stellig)</string>
+    <string name="end_four_digits">Ende (4-Stellig)</string>
+    <string name="overnight">über Nacht </string>
+    <string name="only_digits_allowed">Nur Zahlen sind erlaubt</string>
+    <string name="load_preview">Vorschau laden</string>
+    <string name="failed_load_file">Datei konnte nicht geladen werden</string>
+    <string name="found_workers">Gefundende Arbeiter</string>
+    <string name="choose_input_file">Eingabe Datei auswählen</string>
+    <string name="choose_output_folder">Ausgabe Ordner auswählen</string>
+    <string name="event_config">Termine konfigurieren</string>
+    <string name="table_config">Tabelle konfigurieren</string>
+    <string name="error_no_folder_file">Datei / Ordner nicht ausgewält</string>
+    <string name="error_invalid_time_for_events">Die Uhrzeiten in Terminen müssen exakt 4 Zahlen haben</string>
+    <string name="error_invalid_month_format">Der Monat muss exakt 2 Zahlen haben</string>
+    <string name="error_invalid_year_format">Das Jahr muss exakt 4 Zahlen haben</string>
+</resources>

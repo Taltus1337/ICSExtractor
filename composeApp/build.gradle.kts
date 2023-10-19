@@ -1,11 +1,10 @@
-import Versions.compose
-import Versions.kotlin
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 plugins {
     kotlin("multiplatform")
     kotlin("plugin.serialization")
     id("org.jetbrains.compose")
+    id("dev.icerock.mobile.multiplatform-resources")
 }
 
 kotlin {
@@ -29,6 +28,9 @@ kotlin {
                 implementation(Dependencies.kotlinxSerializationJSON)
                 implementation(Dependencies.excelKT)
                 implementation(Dependencies.filePicker)
+
+                implementation(Dependencies.mokoRes)
+                implementation(Dependencies.mokoResCompose)
             }
         }
 
@@ -54,8 +56,23 @@ compose.desktop {
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "de.franzsw.extractor.desktopApp"
+            packageName = "ICSExtractor"
+            version = ProjectConfig.versionName
+            description = "Ics-Extractor (XLSX to ICS)"
+            copyright = "© 2023 Franz Software by Roland Franz. All rights reserved."
+            vendor = "Franz Software"
+//            licenseFile.set(project.file("LICENSE.txt"))
             packageVersion = ProjectConfig.versionName
+
+            windows {
+                iconFile.set(project.file("src/commonMain/resources/drawables/launcher_icons/DevLogoV2.png"))
+            }
         }
     }
+}
+
+multiplatformResources {
+    multiplatformResourcesPackage = "de.franzsw.extractor"
+    multiplatformResourcesClassName = "SharedRes"
+    multiplatformResourcesSourceSet = "commonMain"
 }

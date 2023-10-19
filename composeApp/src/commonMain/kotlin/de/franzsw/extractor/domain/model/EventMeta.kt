@@ -12,10 +12,7 @@ data class EventMeta(
 
 fun getDefaultInitialAppointments(): List<EventMeta> {
     return listOf(
-        EventMeta("DBT","0600","1800",false),
-        EventMeta("DBN","1800","0600",true),
-        EventMeta("DÜN","0700","1500",false),
-        EventMeta("DUN","0700","1500",false),
-        EventMeta("MEB","1500","1630",false),
+        EventMeta("E1","0600","1800",false),
+        EventMeta("E2","1800","0600",true),
     )
 }

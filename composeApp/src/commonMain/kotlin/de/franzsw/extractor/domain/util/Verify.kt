@@ -1,15 +1,25 @@
 package de.franzsw.extractor.domain.util
 
+import de.franzsw.extractor.data.SharedString
+import de.franzsw.extractor.data.toCommonString
+
 /**
- * @throws error if not condition not matches
+ * @throws error if condition not matches
  */
-fun String.verifyHasFourDigits() {
-    if (!(this.length == 4 && this.all { it.isDigit() })) error("Feld muss exakt 4 Zahlen enthalen")
+fun String.verifyDigits(digits: Int): String {
+    if (!(this.length <= digits && this.all { it.isDigit() })) {
+        error(SharedString.InvalidDigits(digits).toCommonString())
+    } else {
+        return this
+    }
 }
 
 /**
- * @throws error if not condition not matches
+ * @return input string if valid else null
  */
-fun String.verifyHasTwoDigits() {
-    if (!(this.length == 2 && this.all { it.isDigit() })) error("Feld muss exakt 2 Zahlen enthalen")
+fun String.verifyDigitsAndLength(digits: Int): String? {
+    return if (!(this.length == digits && this.all { it.isDigit() })) null else  this
 }
+
+
+

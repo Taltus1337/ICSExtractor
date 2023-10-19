@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="field_digit_not_valid">Doit avoir exactement %s chiffres</string>
+    <string name="excluded_events">Événements Exclus</string>
+    <string name="added_events">Événements Ajoutés</string>
+    <string name="start_export">Démarrer l'Exportation</string>
+    <string name="save_config">Enregistrer la Configuration</string>
+    <string name="year">Année</string>
+    <string name="month">Mois</string>
+    <string name="table">Tableau (Feuille)</string>
+    <string name="worker_column">Colonne du Travailleur</string>
+    <string name="first_row">Première Ligne</string>
+    <string name="first_column">Première Colonne</string>
+    <string name="last_row">Dernière Ligne</string>
+    <string name="last_column">Dernière Colonne</string>
+    <string name="auto_select_last_row">Sélectionner Automatiquement la Dernière Ligne</string>
+    <string name="auto_select_last_column">Sélectionner Automatiquement la Dernière Colonne</string>
+    <string name="add_event">Ajouter un Événement</string>
+    <string name="event">Événement</string>
+    <string name="start_four_digits">Début (4 Chiffres)</string>
+    <string name="end_four_digits">Fin (4 Chiffres)</string>
+    <string name="overnight">Pendant la Nuit</string>
+    <string name="only_digits_allowed">Seuls les chiffres sont autorisés</string>
+    <string name="load_preview">Charger l'Aperçu</string>
+    <string name="failed_load_file">Échec du Chargement du Fichier</string>
+    <string name="found_workers">Travailleurs Trouvés</string>
+    <string name="choose_input_file">Choisir le Fichier d'Entrée</string>
+    <string name="choose_output_folder">Choisir le Dossier de Sortie</string>
+    <string name="event_config">Configurer les Événements</string>
+    <string name="table_config">Configurer le Tableau</string>
+    <string name="error_no_folder_file">Fichier/Dossier non sélectionné</string>
+    <string name="error_invalid_time_for_events">Les heures dans les événements doivent comporter exactement 4 chiffres</string>
+    <string name="error_invalid_month_format">Le mois doit comporter exactement 2 chiffres</string>
+    <string name="error_invalid_year_format">L'année doit comporter exactement 4 chiffres</string>
+</resources>

@@ -1,7 +1,10 @@
 package de.franzsw.extractor.domain
 
+import de.franzsw.extractor.data.SharedString
+import de.franzsw.extractor.data.toCommonString
 import de.franzsw.extractor.domain.model.ExtractionConfig
 import de.franzsw.extractor.domain.model.EventMeta
+import de.franzsw.extractor.domain.util.fromZeroBased
 import org.apache.poi.ss.usermodel.WorkbookFactory
 import java.io.File
 import java.io.FileInputStream
@@ -11,7 +14,7 @@ class ExportICS {
     operator fun invoke(
         eventMetas: List<EventMeta>,
         config: ExtractionConfig,
-        inputFile: File,
+        inputFile: String,
         outputFolderPath: String
     ): String {
         val excludedAppointments = mutableListOf<String>()
@@ -19,17 +22,17 @@ class ExportICS {
 
         val excelFile = FileInputStream(inputFile)
         val workbook = WorkbookFactory.create(excelFile)
-        val sheet = workbook.getSheetAt(config.sheet)
+        val sheet = workbook.getSheetAt(config.zeroBasedSheet())
 
-        val dataEndRow = if (config.isAutoSelectLastRow) sheet.lastRowNum else config.dataEndRow
-        val dataEndColumn = if (config.isAutoSelectLastColumn) sheet.getRow(1).lastCellNum.toInt() else config.dataEndRow
+        val eventsEndRow = if (config.isAutoSelectLastRow) (sheet.lastRowNum - 1) else config.zeroBasedEventsEndRow()
+        val eventsEndColumn = if (config.isAutoSelectLastColumn) (sheet.getRow(1).lastCellNum.toInt() - 1) else config.zeroBasedEventsEndColumn()
 
 
         var availableWorkers = listOf<String>()
 
         // add all workers
-        for (rowIndex in config.dataStartRow..dataEndRow) {
-            val workerName = sheet.getRow(rowIndex)?.getCell(config.workerColumn)?.stringCellValue
+        for (rowIndex in config.zeroBasedEventsStartRow()..eventsEndRow) {
+            val workerName = sheet.getRow(rowIndex)?.getCell(config.zeroBasedWorkerColumn())?.stringCellValue?.trim()
             if (!workerName.isNullOrBlank() && workerName !in availableWorkers) {
                 availableWorkers = availableWorkers.plus(workerName)
             }
@@ -37,7 +40,7 @@ class ExportICS {
 
         for (worker in availableWorkers) {
             val shiftCount = mutableMapOf<String, Int>()
-            val fileOutputStream = FileOutputStream("$outputFolderPath/${config.month}/${config.year} - $worker.ics")
+            val fileOutputStream = FileOutputStream("$outputFolderPath/${config.month}-${config.year} - $worker.ics")
             fileOutputStream.write(
                 """
         BEGIN:VCALENDAR
@@ -50,30 +53,32 @@ class ExportICS {
             fileOutputStream.write("\n".toByteArray())
 
             // iterate over all rows
-            for (rowIndex in config.dataStartRow..dataEndRow) {
+            for (rowIndex in config.zeroBasedEventsStartRow()..eventsEndRow) {
                 // only use worker rows
-                if (sheet.getRow(rowIndex)?.getCell(config.workerColumn)?.stringCellValue == worker) {
+                if (sheet.getRow(rowIndex)?.getCell(config.zeroBasedWorkerColumn())?.stringCellValue?.trim() == worker) {
                     // iterate over all cells
-                    for (columnIndex in config.dataStartColumn..dataEndColumn) {
+                    for (columnIndex in config.zeroBasedEventsStartColumn()..eventsEndColumn) {
                         val cell = sheet.getRow(rowIndex)?.getCell(columnIndex)
                         val cellContent = cell?.stringCellValue?.trim() ?: continue
+
+                        // get event from predefined list
                         val event = eventMetas.firstOrNull {
                             it.abbreviation.trim().uppercase() == cellContent.uppercase()
                         }
 
                         if (event == null) {
-                            excludedAppointments.add(cellContent)
+                            cellContent.takeIf { it.isNotBlank() }?.let { excludedAppointments.add(it) }
                             continue
                         }
 
                         // get day of month from index
-                        val dayOfMonth = cell.columnIndex - (config.dataStartColumn)// TODO verify
+                        val dayOfMonth = (cell.columnIndex - (config.zeroBasedEventsStartColumn())).fromZeroBased()
                         val startDayOfMonthAsString = "${if (dayOfMonth < 10) "0" else ""}$dayOfMonth"
 
                         // handle overnight events (e.g. skip day)
                         val endDateAsString = if (event.isOvernight) {
-                            // check if its last day of month (lastCellNum returns last cell + 1)
-                            if (cell.columnIndex == dataEndColumn) { // TODO: verify not +1 needed
+                            // check if its last day of month
+                            if (cell.columnIndex == eventsEndColumn) {
                                 val nextMonth = ((config.month.toIntOrNull() ?: continue) + 1).let { month ->
                                     "${if (month < 10) "0" else ""}$month"
                                 }
@@ -83,8 +88,9 @@ class ExportICS {
                                 } else {
                                     "${config.year}${nextMonth}01"
                                 }
+
                             } else {
-                                "${config.year}${config.month}$startDayOfMonthAsString"
+                                "${config.year}${config.month}${if ((dayOfMonth + 1) < 10) "0" else ""}${dayOfMonth + 1}"
                             }
                         } else {
                             "${config.year}${config.month}$startDayOfMonthAsString"
@@ -109,12 +115,15 @@ class ExportICS {
             messages.add(
                 buildString {
                     append("$worker # ")
-                    append(shiftCount.keys.forEach { "$it = ${shiftCount[it]} / "})
+                    shiftCount.keys.forEach {
+                        append("$it = ${shiftCount[it]} / ")
+                    }
                 }
             )
         }
         return  buildString {
-            appendLine("excluded events: ${excludedAppointments.joinToString()}")
+            appendLine("${SharedString.ExcludedEvents.toCommonString()}: ${excludedAppointments.distinct().joinToString()}")
+            appendLine("${SharedString.AddedEvents.toCommonString()}:")
             messages.forEach { message ->
                 appendLine(message)
             }

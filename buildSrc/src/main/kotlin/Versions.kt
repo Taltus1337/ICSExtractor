@@ -1,9 +1,9 @@
 object Versions {
-    const val kotlin = "1.9.20-Beta2"
+    const val kotlin = "1.9.20-RC"
     const val agp = "8.1.2"
 
     const val compose = "1.5.1"
-    const val composeMp = "1.5.10-beta02"
+    const val composeMp = "1.5.10-rc01"
     const val composeMaterial3 = "1.1.2"
     const val composeCompiler = "1.5.3"
     const val composeNavigation = "2.7.2"
@@ -23,6 +23,7 @@ object Versions {
     const val richtext = "1.0.0-beta03"
     const val mpSettings = "1.1.0"
     const val mokoMvvm = "0.16.1"
+    const val mokoRes = "0.23.0"
     const val ads = "22.4.0"
     const val billing = "6.0.1"
     const val review = "2.0.1"

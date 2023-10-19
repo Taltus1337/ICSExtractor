@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="field_digit_not_valid">Must exactly %s Digits</string>
+    <string name="excluded_events">Events excluded</string>
+    <string name="added_events">Events added</string>
+    <string name="start_export">Start Export</string>
+    <string name="save_config">Save Configuration</string>
+    <string name="year">Year</string>
+    <string name="month">Month</string>
+    <string name="table">Table (Sheet)</string>
+    <string name="worker_column">Worker Column</string>
+    <string name="first_row">First Row</string>
+    <string name="first_column">First Column</string>
+    <string name="last_row">Last Row</string>
+    <string name="last_column">Last Column</string>
+    <string name="auto_select_last_row">Auto Select Last Row</string>
+    <string name="auto_select_last_column">Auto Select Last Column</string>
+    <string name="add_event">Add Event</string>
+    <string name="event">Event</string>
+    <string name="start_four_digits">Start (4-Digit)</string>
+    <string name="end_four_digits">End (4-Digit)</string>
+    <string name="overnight">Overnight</string>
+    <string name="only_digits_allowed">Only Numbers are Allowed</string>
+    <string name="load_preview">Load Preview</string>
+    <string name="failed_load_file">Failed to Load File</string>
+    <string name="found_workers">Found Workers</string>
+    <string name="choose_input_file">Choose Input File</string>
+    <string name="choose_output_folder">Choose Output Folder</string>
+    <string name="event_config">Configure Events</string>
+    <string name="table_config">Configure Table</string>
+    <string name="error_no_folder_file">File / Folder not Selected</string>
+    <string name="error_invalid_time_for_events">Event times must be exactly 4 digits</string>
+    <string name="error_invalid_month_format">Month must be exactly 2 digits</string>
+    <string name="error_invalid_year_format">Year must be exactly 4 digits</string>
+
+</resources>

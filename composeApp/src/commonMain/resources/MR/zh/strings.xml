@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="field_digit_not_valid">必须包含%s位数字</string>
+    <string name="excluded_events">排除的事件</string>
+    <string name="added_events">已添加的事件</string>
+    <string name="start_export">开始导出</string>
+    <string name="save_config">保存配置</string>
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="table">表格（工作表）</string>
+    <string name="worker_column">员工列</string>
+    <string name="first_row">第一行</string>
+    <string name="first_column">第一列</string>
+    <string name="last_row">最后一行</string>
+    <string name="last_column">最后一列</string>
+    <string name="auto_select_last_row">自动选择最后一行</string>
+    <string name="auto_select_last_column">自动选择最后一列</string>
+    <string name="add_event">添加事件</string>
+    <string name="event">事件</string>
+    <string name="start_four_digits">开始时间（4位数字）</string>
+    <string name="end_four_digits">结束时间（4位数字）</string>
+    <string name="overnight">过夜</string>
+    <string name="only_digits_allowed">只允许数字</string>
+    <string name="load_preview">加载预览</string>
+    <string name="failed_load_file">文件加载失败</string>
+    <string name="found_workers">发现员工</string>
+    <string name="choose_input_file">选择输入文件</string>
+    <string name="choose_output_folder">选择输出文件夹</string>
+    <string name="event_config">配置事件</string>
+    <string name="table_config">配置表格</string>
+    <string name="error_no_folder_file">未选择文件/文件夹</string>
+    <string name="error_invalid_time_for_events">事件时间必须为4位数字</string>
+    <string name="error_invalid_month_format">月份必须为2位数字</string>
+    <string name="error_invalid_year_format">年份必须为4位数字</string>
+</resources>

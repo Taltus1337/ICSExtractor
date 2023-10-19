@@ -8,7 +8,7 @@ class SettingsRepository {
     private val settings: Settings = PreferencesSettings(Preferences.userRoot())
 
     fun saveOriginAppointments(session: String) {
-        settings.putString(session, "event_meta")
+        settings.putString(key = "event_meta", value = session)
     }
 
     fun getOriginAppointments(): String? {
@@ -16,7 +16,7 @@ class SettingsRepository {
     }
 
     fun saveExtractionConfig(config: String) {
-        settings.putString(config, "config")
+        settings.putString(key = "config", value = config)
     }
 
     fun getExtractionConfig(): String? {
