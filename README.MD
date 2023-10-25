@@ -6,7 +6,7 @@ Currently there is only a windows release, if you interested in macOS or linux r
 
 ## How to Use
 
-### Disclaimer
+### Side note
 
 The .ICS (iCalendar) file format is commonly used to store and share calendar and scheduling information. It is a plain text format structured in a specific way to represent calendar events and tasks. An ICS file typically consists of plain text lines that define various properties and attributes of calendar components.
 
