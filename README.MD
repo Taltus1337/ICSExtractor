@@ -2,6 +2,8 @@
 
 Build with Compose Multiplatform. You can either download the distribution from release page or clone the project and run `./gradlew :composeApp:run`
 
+Currently there is only a windows release, if you interested in macOS or linux release please write an issue.
+
 ## How to Use
 
 ### Disclaimer
