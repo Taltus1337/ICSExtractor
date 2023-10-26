@@ -74,7 +74,7 @@ It's absolutely necessary that only the area of shifts is selected, <span style=
 Lastly, you can export by clicking on the bottom-left corner and save the whole configuration/events by clicking on the bottom-right corner.
 
 ##### 7. Verify
-After clicking export, you will see a log showing the created and excluded events. Furthermore, you can open the created `.ICS` files with any text editor. A small description of how it should look is at the top of this article in the disclaimer.
+After clicking export, you will see a log showing the created and excluded events. Furthermore, you can open the created `.ICS` files with any text editor. A small description of how it should look is at the top of this article in the side note.
 
 ##### 8. Importing
 On most devices, it should be enough to open the file on, for example, a phone and select your preferred calendar to execute. Sometimes it might be necessary to import via calendar settings directly. Everything else would be out of the scope of this tutorial.
