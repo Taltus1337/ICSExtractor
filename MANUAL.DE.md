@@ -78,6 +78,7 @@ Da Excel-Spalten durch Buchstaben (A, B, C, D...) aufgezählt werden und diese S
 
 #### Mehrere Zeilen für denselben Mitarbeiter
 Wie im Beispiel zu sehen ist, spielt es keine Rolle, wie viele Zeilen Sie für denselben Mitarbeiter verwenden. Alle Ereignisse werden in einer ICS-Datei aufgenommen.
+
 ![Mehrere Zeilen für denselben Mitarbeiter](documentation/resources/doc_img_multi_worker.png)
 
 #### Ecken markieren
