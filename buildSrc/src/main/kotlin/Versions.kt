@@ -1,9 +1,9 @@
 object Versions {
-    const val kotlin = "1.9.20-RC"
+    const val kotlin = "1.9.20"
     const val agp = "8.1.2"
 
-    const val compose = "1.5.1"
-    const val composeMp = "1.5.10-rc01"
+    const val compose = "1.5.4"
+    const val composeMp = "1.5.10"
     const val composeMaterial3 = "1.1.2"
     const val composeCompiler = "1.5.3"
     const val composeNavigation = "2.7.2"
