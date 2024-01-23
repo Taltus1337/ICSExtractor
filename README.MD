@@ -88,5 +88,5 @@ As Excel columns are enumerated by letters (A, B, C, D...) and this software nee
 As visible in the example, the software does not care how many rows you use for the same worker. All events will be included in one ICS file.
 ![Multiple Worker Rows for the Same](documentation/resources/doc_img_multi_worker.png)
 
-#### Mark Corners
-As used in the tutorial, you can simply use any character (that is not assigned to any event) to mark corners if they are empty.
+
+Check out our other Apps at [franz-sw.de](https://franz-sw.de/)
