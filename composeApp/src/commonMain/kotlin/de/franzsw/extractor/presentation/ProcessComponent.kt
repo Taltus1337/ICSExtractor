@@ -1,5 +1,11 @@
 package de.franzsw.extractor.presentation
 
+import com.arkivanov.decompose.ComponentContext
+import com.arkivanov.decompose.value.MutableValue
+import com.arkivanov.decompose.value.Value
+import com.arkivanov.decompose.value.update
+import com.arkivanov.decompose.value.updateAndGet
+import com.arkivanov.essenty.instancekeeper.InstanceKeeper
 import de.franzsw.extractor.data.SharedString
 import de.franzsw.extractor.data.toCommonString
 import de.franzsw.extractor.domain.ExportICS
@@ -10,16 +16,15 @@ import de.franzsw.extractor.domain.model.ExtractionConfig
 import de.franzsw.extractor.domain.util.verifyDigitsAndLength
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
-class ExtractionViewModel(
-    private val sessionConverter: SessionConverter
-) {
+class ProcessComponent(
+    private val sessionConverter: SessionConverter,
+    componentContext: ComponentContext
+) : ComponentContext by componentContext, InstanceKeeper.Instance {
 
-    private val _state = MutableStateFlow(ExtractionState())
-    val state = _state
-        .stateIn(CoroutineScope(Dispatchers.Main), SharingStarted.WhileSubscribed(5000), ExtractionState())
+    private val _state = MutableValue(ExtractionState())
+    val state: Value<ExtractionState> = _state
 
     init {
         loadInitialData()

@@ -1,23 +1,22 @@
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
-import java.awt.Dimension
+import com.arkivanov.decompose.DefaultComponentContext
+import com.arkivanov.decompose.extensions.compose.jetbrains.stack.Children
+import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.slide
+import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.stackAnimation
+import com.arkivanov.decompose.extensions.compose.jetbrains.subscribeAsState
+import com.arkivanov.essenty.lifecycle.LifecycleRegistry
 import de.franzsw.extractor.App
-import de.franzsw.extractor.SharedRes
-import de.franzsw.extractor.domain.SessionConverter
-import de.franzsw.extractor.presentation.ExtractionViewModel
+import de.franzsw.extractor.presentation.SyncRootComponent
+import java.awt.Dimension
 
 fun main() = application {
-    val sessionConverter = SessionConverter()
 
-    val viewModel = ExtractionViewModel(
-        sessionConverter = sessionConverter
-    )
+    val root = SyncRootComponent(DefaultComponentContext(LifecycleRegistry()))
 
-    val state by viewModel.state.collectAsState()
 
     Window(
         title = "Extractor",
@@ -25,9 +24,27 @@ fun main() = application {
         onCloseRequest = ::exitApplication,
     ) {
         window.minimumSize = Dimension(350, 600)
-        App(
-            state = state,
-            onEvent = viewModel::onEvent
-        )
+
+        val childStack by root.childStack.subscribeAsState()
+
+        Children(
+            stack = childStack,
+            animation = stackAnimation(slide())
+        ) { child ->
+            when (val instance = child.instance) {
+                is SyncRootComponent.Child.SyncMenu -> {
+                    val component = instance.component
+                    val state by component.state.subscribeAsState()
+
+                    App(
+                        state = state,
+                        onEvent = component::onEvent
+                    )
+                }
+
+            }
+        }
+
+
     }
 }

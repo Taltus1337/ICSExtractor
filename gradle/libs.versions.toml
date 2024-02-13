@@ -1,0 +1,152 @@
+[versions]
+agp = "8.2.2"
+kotlin = "1.9.22"
+ksp = "1.9.22-1.0.16"
+
+compose = "1.5.4"
+composeMp = "1.5.12"
+
+composeCompiler = "1.5.8"
+composeMaterial3 = "1.1.2"
+androidxActivityCompose = "1.8.2"
+composeNavigation = "2.7.6"
+
+comleteKotlin = "1.1.0"
+sqldelight = "2.0.1"
+apollo = "3.8.2"
+richtext = "1.0.0-rc01"
+mpSettings = "1.1.0"
+mokoMvvm = "0.16.1"
+
+extensionsComposeJetbrains = "2.2.2-compose-experimental"
+decompose = "2.2.2"
+
+ads = "22.6.0"
+ump = "2.2.0"
+billing = "6.1.0"
+review = "2.0.1"
+update = "2.1.0"
+guava = "32.0.1-jre"
+googleServices = "4.4.0"
+googleServicesCoroutines = "1.7.3"
+firebaseBOM = "32.7.1"
+firebaseKMP = "1.11.1"
+
+kotlinxDateTime = "0.5.0"
+kotlinxSerializationJson = "1.6.0"
+kotlinxCoroutines = "1.7.3"
+
+androidxEncryptedPreferences = "1.0.0"
+androidxPreferences = "1.2.1"
+androidxDatastore = "1.0.0"
+androidxAppCompat = "1.6.1"
+androidxCore = "1.12.0"
+androidxSplashScreen = "1.0.1"
+androidxLiveData = "2.7.0"
+androidxLifecycle = "2.7.0"
+
+room = "2.6.1"
+roomAssetHelper = "1.2"
+hilt = "2.50"
+hiltAndroidx = "1.1.0"
+
+config-default-minSdk = "24"
+config-default-targetSdk = "34"
+config-default-compileSdk = "34"
+
+config-sachkunde-versionCode = "81"
+config-sachkunde-versionName = "2.0-IAP"
+
+[libraries]
+androidx-activityCompose = { module = "androidx.activity:activity-compose", version.ref = "androidxActivityCompose" }
+
+compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
+compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+compose-ui-graphics = { module = "androidx.compose.ui:ui-graphics", version.ref = "compose" }
+compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
+compose-runtime = { module = "androidx.compose.runtime:runtime", version.ref = "compose" }
+compose-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "composeNavigation" }
+compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
+compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "composeMaterial3" }
+compose-materialIcons = { module = "androidx.compose.material:material-icons-extended", version.ref = "compose" }
+
+compose-richTextEditor = { module = "com.mohamedrejeb.richeditor:richeditor-compose", version.ref = "richtext" }
+
+decompose-runtime = { module = "com.arkivanov.decompose:decompose", version.ref = "decompose" }
+decompose-jetbrains = { module = "com.arkivanov.decompose:extensions-compose-jetbrains", version.ref = "extensionsComposeJetbrains" }
+
+androidx-datastore = { module = "androidx.datastore:datastore-preferences", version.ref = "androidxDatastore" }
+androidx-appCompat = { module = "androidx.appcompat:appcompat", version.ref = "androidxAppCompat" }
+androidx-core = { module = "androidx.core:core-ktx", version.ref = "androidxCore" }
+androidx-encryptedPreferences = { module = "androidx.security:security-crypto", version.ref = "androidxEncryptedPreferences" }
+androidx-preferences = { module = "androidx.preference:preference", version.ref = "androidxPreferences" }
+androidx-splashScreen = { module = "androidx.core:core-splashscreen", version.ref = "androidxSplashScreen" }
+androidx-liveData = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "androidxLiveData" }
+androidx-lifecycleCompose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidxLifecycle" }
+
+kotlinx-dateTime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDateTime" }
+kotlinx-serializationJson = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+kotlinx-coroutinesCore = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
+
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
+hilt-androidxCompose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltAndroidx" }
+hilt-androidxCompiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltAndroidx" }
+
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+room-assetHelper = { module = "com.github.ueen:RoomAssetHelper", version.ref = "roomAssetHelper" }
+
+sqlDelight-runtime = { module = "app.cash.sqldelight:runtime", version.ref = "sqldelight" }
+sqlDelight-coroutines = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqldelight" }
+sqlDelight-adapters = { module = "app.cash.sqldelight:primitive-adapters", version.ref = "sqldelight" }
+sqlDelight-androidDriver = { module = "app.cash.sqldelight:android-driver", version.ref = "sqldelight" }
+sqlDelight-iosDriver = { module = "app.cash.sqldelight:native-driver", version.ref = "sqldelight" }
+
+apollo-runtime = { module = "com.apollographql.apollo3:apollo-runtime", version.ref = "apollo" }
+
+mpSettings-runtime = { module = "com.russhwolf:multiplatform-settings", version.ref = "mpSettings" }
+mpSettings-coroutines = { module = "com.russhwolf:multiplatform-settings-coroutines", version.ref = "mpSettings" }
+mpSettings-datastore = { module = "com.russhwolf:multiplatform-settings-datastore", version.ref = "mpSettings" }
+
+mokoMvvm-core = { module = "dev.icerock.moko:mvvm-core", version.ref = "mokoMvvm" }
+mokoMvvm-compose = { module = "dev.icerock.moko:mvvm-compose", version.ref = "mokoMvvm" }
+mokoMvvm-flow = { module = "dev.icerock.moko:mvvm-flow", version.ref = "mokoMvvm" }
+mokoMvvm-flowCompose = { module = "dev.icerock.moko:mvvm-flow-compose", version.ref = "mokoMvvm" }
+
+google-ads = { module = "com.google.android.gms:play-services-ads", version.ref = "ads" }
+google-ump = { module = "com.google.android.ump:user-messaging-platform", version.ref = "ump" }
+google-update = { module = "com.google.android.play:app-update", version.ref = "update" }
+google-updateKtx = { module = "com.google.android.play:app-update-ktx", version.ref = "update" }
+google-billing = { module = "com.android.billingclient:billing-ktx", version.ref = "billing" }
+google-guava = { module = "com.google.guava:guava", version.ref = "guava" }
+google-review = { module = "com.google.android.play:review", version.ref = "review" }
+google-reviewKtx = { module = "com.google.android.play:review-ktx", version.ref = "review" }
+google-services-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services", version.ref = "googleServicesCoroutines" }
+
+# Firebase Android
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBOM" }
+firebase-authKtx = { module = "com.google.firebase:firebase-auth-ktx" }
+firebase-firestoreKtx = { module = "com.google.firebase:firebase-firestore-ktx" }
+# Firebase KMP
+firebaseKMP-common = { module = "dev.gitlive:firebase-common", version.ref = "firebaseKMP" }
+firebaseKMP-auth = { module = "dev.gitlive:firebase-auth", version.ref = "firebaseKMP" }
+firebaseKMP-firestore = { module = "dev.gitlive:firebase-firestore", version.ref = "firebaseKMP" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+room = { id = "androidx.room", version.ref = "room" }
+
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlinCocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
+
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "composeMp" }
+daggerHilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+sqldelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
+completeKotlin = { id = "com.louiscad.complete-kotlin", version.ref = "comleteKotlin" }
+googleServices = { id = "com.google.gms.google-services", version.ref = "googleServices" }

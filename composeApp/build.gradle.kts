@@ -29,6 +29,9 @@ kotlin {
                 implementation(Dependencies.excelKT)
                 implementation(Dependencies.filePicker)
 
+                implementation(libs.decompose.runtime)
+                implementation(libs.decompose.jetbrains)
+
                 implementation(Dependencies.mokoRes)
                 implementation(Dependencies.mokoResCompose)
             }
@@ -59,7 +62,7 @@ compose.desktop {
             packageName = "ICSExtractor"
             version = ProjectConfig.versionName
             description = "Ics-Extractor (XLSX to ICS)"
-            copyright = "© 2023 Franz Software by Roland Franz. All rights reserved."
+            copyright = "© 2024 Franz Software by Roland Franz. All rights reserved."
             vendor = "Franz Software"
             licenseFile.set(project.file("../LICENSE.txt"))
             packageVersion = ProjectConfig.versionName
