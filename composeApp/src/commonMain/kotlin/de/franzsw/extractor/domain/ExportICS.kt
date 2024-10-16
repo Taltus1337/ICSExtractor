@@ -100,8 +100,8 @@ class ExportICS {
                             """
                         BEGIN:VEVENT
                         SUMMARY:${event.abbreviation}
-                        DTSTART:${config.year}${config.month}${startDayOfMonthAsString}T${event.start}00
-                        DTEND:${endDateAsString}T${event.end}00
+                        DTSTART;TZID=Europe/Berlin:${config.year}${config.month}${startDayOfMonthAsString}T${event.start}00
+                        DTEND;TZID=Europe/Berlin:${endDateAsString}T${event.end}00
                         END:VEVENT
                     """.trimIndent().toByteArray()
                         )

@@ -1,3 +1,3 @@
 object ProjectConfig {
-    const val versionName = "1.0.03"
+    const val versionName = "1.1.0"
 }

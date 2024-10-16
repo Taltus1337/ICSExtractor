@@ -52,7 +52,7 @@ kotlin {
 
     }
 }
-
+// ./gradlew composeApp:packageReleaseDistributionForCurrentOS
 compose.desktop {
     application {
         mainClass = "MainKt"

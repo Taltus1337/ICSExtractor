@@ -11,6 +11,7 @@ import com.arkivanov.decompose.extensions.compose.jetbrains.subscribeAsState
 import com.arkivanov.essenty.lifecycle.LifecycleRegistry
 import de.franzsw.extractor.App
 import de.franzsw.extractor.presentation.SyncRootComponent
+import de.franzsw.extractor.presentation.theme.SwingPanelTest
 import java.awt.Dimension
 
 fun main() = application {
@@ -44,6 +45,8 @@ fun main() = application {
 
             }
         }
+
+//        SwingPanelTest()
 
 
     }
